@@ -161,6 +161,16 @@ const testArticle = {
 }
 data.push(testArticle);
 
+const dogArticle = {
+  title: 'Dogs of Lambda',
+  date: '07/07/2021',
+  firstParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.',
+  secondParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.',
+  thirdParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.'
+}
+
+data.push(dogArticle)
+
 const articles = document.querySelector('.articles');
 
   data.forEach(obj => {
