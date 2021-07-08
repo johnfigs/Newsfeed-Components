@@ -103,6 +103,42 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+  */
+  function articleMaker(article){
+    const articleInst = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const articleP1 = document.createElement('p');
+    const articleP2 = document.createElement('p');
+    const articleP3 = document.createElement('p');
+    const articleSpan = document.createElement('span');
+
+    articleInst.classList.add('article');
+    articleDate.classList.add('date');
+    articleSpan.classList.add('expandButton');
+
+    articleInst.appendChild(articleTitle);
+    articleInst.appendChild(articleDate);
+    articleInst.appendChild(articleP1);
+    articleInst.appendChild(articleP2);
+    articleInst.appendChild(articleP3);
+    articleInst.appendChild(articleSpan);
+
+    articleTitle.textContent = article.title;
+    articleDate.textContent = article.date;
+    articleP1.textContent = article.firstParagraph;
+    articleP2.textContent = article.secondParagraph;
+    articleP3.textContent = article.thirdParagraph;
+    articleSpan.textContent = '+';
+
+    articleSpan.addEventListener('click', () => {
+      articleInst.classList.toggle('article-open');
+    })
+
+    return articleInst;
+  }
+  /*
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -110,7 +146,43 @@ const data = [
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
+  
+  
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const testArticle = {
+  title: 'test title',
+  date: '01/01/1900',
+  firstParagraph: 'first paragraph',
+  secondParagraph: 'second paragraph',
+  thirdParagraph: 'third paragraph'
+}
+data.push(testArticle);
+
+const dogArticle = {
+  title: 'Dogs of Lambda',
+  date: '07/07/2021',
+  firstParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.',
+  secondParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.',
+  thirdParagraph: 'Doggo ipsum maximum borkdrive boofers very good spot you are doin me a concern, heckin angery woofer. Wrinkler boofers floofs heckin good boys and girls the neighborhood pupper puggorino, very taste wow smol borking doggo with a long snoot for pats heckin good boys and girls. doggo fluffer. Long bois wow very biscit doge woofer what a nice floof doing me a frighten, big ol boofers long woofer smol. Very hand that feed shibe porgo mlem borking doggo lotsa pats, clouds most angery pupper I have ever seen very hand that feed shibe.'
+}
+
+data.push(dogArticle)
+
+const articles = document.querySelector('.articles');
+
+  data.forEach(obj => {
+    const article = articleMaker(obj);
+    articles.appendChild(article);
+  })
+  
+  
+
+
+
+  // const testArticleInst = articleMaker(testArticle);
+  // articles.appendChild(testArticleInst);
+
+
